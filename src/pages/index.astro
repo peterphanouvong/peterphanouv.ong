@@ -1,16 +1,270 @@
 ---
-
+import { Image } from "astro:assets";
+import myImage from "./my-image.png";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Peter Phanouvong - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+      }
+
+      html::-webkit-scrollbar {
+        display: none; /* WebKit browsers (Chrome, Safari, Edge) */
+      }
+
+      body {
+        font-family: "Rethink Sans", sans-serif;
+        line-height: 1.6;
+        color: #000;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      /* Top Section - White Background */
+      .top-section {
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+      }
+
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #1b4df5;
+        margin-right: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        object-fit: cover;
+      }
+
+      .name {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #000;
+      }
+
+      .main-heading {
+        font-size: 2rem;
+        font-weight: 1000;
+        margin-bottom: 1rem;
+        margin-top: 2.5rem;
+        color: #000;
+        line-height: 1;
+      }
+
+      .location {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.005em;
+        color: #888;
+        max-width: 600px;
+      }
+
+      .intro-text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.005em;
+        color: #000;
+        max-width: 600px;
+      }
+
+      .email-link {
+        font-size: 1rem;
+        color: #000;
+        text-decoration: underline;
+        display: inline-block;
+        font-weight: 600;
+        margin-top: 2rem;
+      }
+
+      .email-link:hover {
+        color: #333;
+      }
+
+      /* Bottom Section - Blue Background */
+      .bottom-section {
+        background-color: #1b4df5;
+        padding: 2rem 0;
+        color: #ffffff;
+      }
+
+      .products-title {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 3rem;
+        color: #ffffff;
+      }
+
+      .product {
+        margin-bottom: 3rem;
+      }
+
+      .product-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #ffffff;
+        text-decoration: underline;
+      }
+
+      .product-description {
+        font-size: 1rem;
+        color: #ffffff;
+        max-width: 600px;
+      }
+
+      /* Desktop Responsive */
+      @media (min-width: 768px) {
+        .container {
+          padding: 0 4rem;
+        }
+        .avatar {
+          width: 64px;
+          height: 64px;
+          margin-right: 1rem;
+        }
+        .name {
+          font-size: 1.2rem;
+        }
+        .top-section {
+          padding: 6rem 0;
+        }
+
+        .main-heading {
+          font-size: 4.5rem;
+        }
+
+        .intro-text {
+          font-size: 1.3rem;
+        }
+
+        .email-link {
+          font-size: 1.3rem;
+        }
+
+        .bottom-section {
+          padding: 6rem 0;
+        }
+
+        .products-title {
+          font-size: 1.3rem;
+        }
+
+        .product-title {
+          font-size: 2rem;
+        }
+
+        .product-description {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .main-heading {
+          font-size: 5rem;
+        }
+
+        .intro-text {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Section - White Background -->
+    <section class="top-section">
+      <div class="container">
+        <div class="header">
+          <Image class="avatar" src={myImage} alt="Peter Phanouvong" />
+          <h1 class="name">Peter Phanouvong</h1>
+        </div>
+
+        <h2 class="main-heading">Building products that help people!</h2>
+
+        <p class="location">Western Sydney, Australia</p>
+
+        <p class="intro-text">
+          I spend most of time creating digital products – acting as an
+          engineer, designer and viral marketer.
+        </p>
+
+        <p class="intro-text">
+          My little apps help thousands of students, volleyballers and couples
+          achieve their goals.
+        </p>
+
+        <a href="mailto:peter@example.com" class="email-link">Email me</a>
+      </div>
+    </section>
+
+    <!-- Bottom Section - Blue Background -->
+    <section class="bottom-section">
+      <div class="container">
+        <h3 class="products-title">My work</h3>
+
+        <div class="product">
+          <a href="https://gettandm.app" target="_blank" class="product-title"
+            >Tandm</a
+          >
+          <p class="product-description">
+            An app for couples to have longer, happier relationships by making
+            responsibilities clear
+          </p>
+        </div>
+
+        <div class="product">
+          <a
+            href="https://www.sportrackr.com.au"
+            target="_blank"
+            class="product-title">Sportrackr</a
+          >
+          <p class="product-description">
+            A web app for volleyballers to track stats for their team and gain
+            valuable insights
+          </p>
+        </div>
+
+        <div class="product">
+          <a href="https://study.tube" target="_blank" class="product-title"
+            >Study.tube</a
+          >
+          <p class="product-description">
+            A chrome extension to optimise your YouTube experience for learning
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
