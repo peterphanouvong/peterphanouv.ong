@@ -1,6 +1,7 @@
 ---
 import site from "../data/site.json";
 import projects from "../data/projects.json";
+import { isVideo } from "../lib/media";
 
 // Fixed scatter positions for the screenshot tiles. Each tile drifts along
 // (dx, dy) and rotates by `r` degrees as the scroll progress (--p) goes 0 → 1.
@@ -15,10 +16,14 @@ const slots = [
   { left: "38%", top: "-6%", width: "26%", dx: 0.3, dy: -1.2, r: 5 },
 ];
 
-const tiles = slots.map((slot, i) => ({
-  ...slot,
-  image: projects[i % projects.length].image,
-}));
+const tiles = slots.map((slot, i) => {
+  const project = projects[i % projects.length];
+  return {
+    ...slot,
+    image: project.image,
+    poster: "poster" in project ? (project.poster as string) : undefined,
+  };
+});
 
 const year = new Date().getFullYear();
 ---
@@ -36,15 +41,32 @@ const year = new Date().getFullYear();
       <p class="display">{site.philosophy.quote}</p>
     </blockquote>
     {
-      tiles.map((tile) => (
-        <img
-          class="tile"
-          src={tile.image}
-          alt=""
-          loading="lazy"
-          style={`left:${tile.left};top:${tile.top};width:${tile.width};--dx:${tile.dx};--dy:${tile.dy};--r:${tile.r}`}
-        />
-      ))
+      tiles.map((tile) => {
+        const style = `left:${tile.left};top:${tile.top};width:${tile.width};--dx:${tile.dx};--dy:${tile.dy};--r:${tile.r}`;
+        // Video projects show a still in the tiles (poster, or the video's
+        // first frame) — eight looping videos would jank the scroll animation
+        if (isVideo(tile.image) && !tile.poster) {
+          return (
+            <video
+              class="tile"
+              src={tile.image}
+              muted
+              playsinline
+              preload="metadata"
+              style={style}
+            />
+          );
+        }
+        return (
+          <img
+            class="tile"
+            src={tile.poster ?? tile.image}
+            alt=""
+            loading="lazy"
+            style={style}
+          />
+        );
+      })
     }
   </div>
 </section>

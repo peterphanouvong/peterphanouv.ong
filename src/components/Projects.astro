@@ -1,6 +1,7 @@
 ---
 import site from "../data/site.json";
 import projects from "../data/projects.json";
+import { isVideo } from "../lib/media";
 ---
 
 <section class="projects container" aria-labelledby="projects-heading">
@@ -10,7 +11,21 @@ import projects from "../data/projects.json";
       projects.map((project) => (
         <article class="project">
           <a class="screenshot" href={project.url} aria-hidden="true" tabindex="-1">
-            <img src={project.image} alt="" loading="lazy" />
+            {
+              isVideo(project.image) ? (
+                <video
+                  src={project.image}
+                  poster={"poster" in project ? project.poster : undefined}
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                />
+              ) : (
+                <img src={project.image} alt="" loading="lazy" />
+              )
+            }
           </a>
           <div class="details">
             <h3 class="display">
@@ -59,6 +74,12 @@ import projects from "../data/projects.json";
   .screenshot:hover {
     transform: translateY(-4px);
     box-shadow: 0 26px 48px -24px rgba(18, 18, 18, 0.45);
+  }
+
+  .screenshot video {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
   .details {

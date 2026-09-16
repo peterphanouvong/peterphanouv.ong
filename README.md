@@ -19,8 +19,9 @@ All copy and links live in `src/data/` — you shouldn't need to touch any compo
 ```
 
 - Drop the screenshot (PNG, JPG, or GIF — GIFs animate) into `public/projects/` and reference it as `/projects/<filename>`.
+- **Videos work too**: point `image` at an `.mp4`, `.webm`, or `.mov` file and the card renders an auto-playing, muted, looping video instead. Optionally add a `"poster": "/projects/<still>.png"` field — it shows while the video loads.
 - The current `.svg` images are placeholders — replace them with real screenshots.
-- Project images are also reused as the tiles in the philosophy footer animation.
+- Project images are also reused as the tiles in the philosophy footer animation. Video projects show a still there (the poster if set, otherwise the video's first frame) so the scroll animation stays smooth.
 
 ### Blog posts (`src/data/posts.json`)
 
