@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Voice Stat Capture",
+    "description": "Voice-controlled stat tracking for volleyball coaches. Speak the play, the stats log themselves.",
+    "url": "#",
+    "tags": ["ai", "desktop", "volleyball"],
+    "image": "/projects/voice-stat-capture.svg"
+  },
+  {
+    "title": "Tandm",
+    "description": "An app for couples to have longer, happier relationships by making responsibilities clear.",
+    "url": "https://gettandm.app",
+    "tags": ["mobile", "relationships"],
+    "image": "/projects/tandm.svg"
+  },
+  {
+    "title": "Sportrackr",
+    "description": "A web app for volleyballers to track stats for their team and gain valuable insights.",
+    "url": "https://www.sportrackr.com.au",
+    "tags": ["web", "volleyball"],
+    "image": "/projects/sportrackr.svg"
+  },
+  {
+    "title": "Study.tube",
+    "description": "A Chrome extension to optimise your YouTube experience for learning.",
+    "url": "https://study.tube",
+    "tags": ["extension", "learning"],
+    "image": "/projects/study-tube.svg"
+  }
+]

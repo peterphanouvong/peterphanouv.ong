@@ -1,43 +1,49 @@
-# Astro Starter Kit: Minimal
+# peterphanouv.ong
 
-```sh
-npm create astro@latest -- --template minimal
+Personal site built with [Astro](https://astro.build). Cream paper, Chicago FLF headings, and a scroll-driven philosophy footer where the app screenshots clear the runway to reveal the quote.
+
+## Updating content
+
+All copy and links live in `src/data/` — you shouldn't need to touch any component to update the site.
+
+### Projects (`src/data/projects.json`)
+
+```json
+{
+  "title": "Voice Stat Capture",
+  "description": "One sentence about what it does.",
+  "url": "https://example.com",
+  "tags": ["ai", "desktop"],
+  "image": "/projects/voice-stat-capture.png"
+}
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- Drop the screenshot (PNG, JPG, or GIF — GIFs animate) into `public/projects/` and reference it as `/projects/<filename>`.
+- The current `.svg` images are placeholders — replace them with real screenshots.
+- Project images are also reused as the tiles in the philosophy footer animation.
 
-## 🚀 Project Structure
+### Blog posts (`src/data/posts.json`)
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```json
+{ "title": "Can you steal taste?", "url": "https://..." }
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Everything else (`src/data/site.json`)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Name, headline, intro paragraphs (plain HTML allowed for links), section headings, email/contact links, and the philosophy quote + background photo (`public/philosophy.jpg`).
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Fonts
 
-## 🧞 Commands
+Self-hosted in `public/fonts/`:
 
-All commands are run from the root of the project, from a terminal:
+- **Chicago FLF** (headings) — public domain, by Robin Casady
+- **Open Sauce One** (body) — SIL OFL, by [Creative Sauce](https://github.com/marcologous/Open-Sauce-Fonts)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Commands
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command           | Action                                      |
+| :---------------- | :------------------------------------------ |
+| `npm install`     | Install dependencies                        |
+| `npm run dev`     | Start local dev server at `localhost:4321`  |
+| `npm run build`   | Build the production site to `./dist/`      |
+| `npm run preview` | Preview the build locally before deploying  |

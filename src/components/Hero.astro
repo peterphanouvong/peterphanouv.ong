@@ -1,0 +1,47 @@
+---
+import site from "../data/site.json";
+---
+
+<header class="hero container">
+  <p class="greeting">{site.greeting}</p>
+  <h1 class="display headline">{site.headline}</h1>
+  <div class="intro">
+    {site.intro.map((paragraph) => <p set:html={paragraph} />)}
+  </div>
+</header>
+
+<style>
+  .hero {
+    padding-block: clamp(4rem, 12vh, 7rem) clamp(3rem, 8vh, 5rem);
+  }
+
+  .greeting {
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .headline {
+    font-size: clamp(2.125rem, 4.5vw + 0.5rem, 3.75rem);
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+    margin-bottom: 2.25rem;
+  }
+
+  .intro {
+    max-width: 34rem;
+  }
+
+  .intro p + p {
+    margin-top: 1.35rem;
+  }
+
+  .intro :global(a) {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1.5px;
+  }
+
+  .intro :global(a:hover) {
+    color: var(--soft);
+  }
+</style>

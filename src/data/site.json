@@ -1,0 +1,22 @@
+{
+  "name": "Peter Phanouvong",
+  "title": "Peter Phanouvong",
+  "description": "I build things that help people live more intentional lives.",
+  "greeting": "Hi, I’m Peter",
+  "headline": "I build things that help people live more intentional lives",
+  "intro": [
+    "I am on a mission to replace all the lifestyle apps on my phone with ones that I have built myself – with the needs of young men in mind.",
+    "I am also an <a href=\"https://goparachute.ai\">AI Engineer at Parachute</a> working on making lawyers love law again."
+  ],
+  "headings": {
+    "thinking": "I am thinking about...",
+    "building": "I am currently building..."
+  },
+  "email": "hey@peterphanouv.ong",
+  "links": [{ "label": "Email", "url": "mailto:hey@peterphanouv.ong" }],
+  "philosophy": {
+    "quote": "Tech clears the runway, so you can fly the plane.",
+    "image": "/philosophy.jpg",
+    "imageAlt": "Two hikers walking a trail towards snow-capped mountains"
+  }
+}

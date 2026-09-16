@@ -1,0 +1,66 @@
+---
+import site from "../data/site.json";
+import posts from "../data/posts.json";
+---
+
+<section class="thinking container" aria-labelledby="thinking-heading">
+  <h2 class="display" id="thinking-heading">{site.headings.thinking}</h2>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post.url}>
+            {post.title}&nbsp;<span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .thinking {
+    padding-block: clamp(2.5rem, 7vh, 4.5rem);
+  }
+
+  h2 {
+    margin-bottom: 1.75rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li + li {
+    margin-top: 0.85rem;
+  }
+
+  a {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .arrow {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--muted);
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+
+  a:hover .arrow {
+    transform: translate(3px, -3px);
+    color: var(--ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .arrow {
+      transition: none;
+    }
+  }
+</style>

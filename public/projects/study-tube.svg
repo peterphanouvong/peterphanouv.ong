@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Study.tube placeholder screenshot">
+  <rect width="1200" height="750" rx="14" fill="#101014"/>
+  <rect x="0.5" y="0.5" width="1199" height="749" rx="14" fill="none" stroke="#2a2a32"/>
+  <circle cx="30" cy="26" r="7" fill="#ff5f57"/>
+  <circle cx="54" cy="26" r="7" fill="#febc2e"/>
+  <circle cx="78" cy="26" r="7" fill="#28c840"/>
+  <text x="110" y="31" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" fill="#6f6f7a">Study.tube</text>
+  <rect x="0" y="52" width="230" height="698" fill="#16161c"/>
+  <rect x="24" y="86" width="120" height="12" rx="6" fill="#33333d"/>
+  <rect x="24" y="122" width="160" height="12" rx="6" fill="#26262e"/>
+  <rect x="24" y="150" width="140" height="12" rx="6" fill="#26262e"/>
+  <rect x="24" y="178" width="150" height="12" rx="6" fill="#26262e"/>
+  <text x="280" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="88" font-weight="bold" fill="#f2f0e9">FOCUS</text>
+  <rect x="280" y="240" width="360" height="14" rx="7" fill="#3a3a44"/>
+  <rect x="280" y="300" width="860" height="1" fill="#2a2a32"/>
+  <rect x="280" y="336" width="820" height="44" rx="8" fill="#191920"/>
+  <rect x="280" y="392" width="820" height="44" rx="8" fill="#191920"/>
+  <rect x="280" y="448" width="820" height="44" rx="8" fill="#191920"/>
+  <text x="300" y="364" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#5c5c68">replace me with a real screenshot or GIF</text>
+</svg>
